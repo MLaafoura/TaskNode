@@ -45,42 +45,31 @@ TaskNode is a modern task management system designed to help individuals and tea
 
 1. Clone the repository
 
-    |-----------------------------------------------------|
-    | git clone https://github.com/MLaafoura/taskNode.git |
-    | cd taskNode                                         |
-    |-----------------------------------------------------|
+    git clone https://github.com/MLaafoura/taskNode.git
+    cd taskNode
+
 
 2. Backend Setup (Django)
 
     Install dependencies:
+    pip install -r requirements.txt
 
-    |--------------------------------------|
-    |                                      |
-    | pip install -r requirements.txt      |
-    |                                      |
-    | Run migrations and start the server: |
-    |                                      |
-    |                                      |
-    |    python manage.py migrate          |
-    |    python manage.py runserver        |
-    |                                      |
-    |--------------------------------------|
+    Run migrations and start the server:
+
+        python manage.py migrate
+        python manage.py runserver
+
 
  3. Frontend Setup (React)
 
     Navigate to the frontend directory:
-
-       |----------------------| 
-       | cd tasknode-frontend |
-       |----------------------|
-
+        cd tasknode-frontend
 
     Install dependencies and start the development server:
-    
-    |--------------------|
-    |    npm install     |
-    |    npm start       |
-    |--------------------|
+
+        npm install
+        npm start
+
 
 4. Access the application
 
@@ -90,17 +79,17 @@ TaskNode is a modern task management system designed to help individuals and tea
 📂 Project Structure
 
 
-taskNode/
-├── taskNode/                   # Django backend folder
-│   ├── manage.py               # Django management script          
-│   └── ...
-├── tasknode-frontend/           # React frontend folder
-│   ├── public/
-│   ├── src/
-│   └── ...
-├── .gitignore                   # Ignored files
-├── README.md                    # Project documentation
-└── ...
+    taskNode/
+    ├── taskNode/                   # Django backend folder
+    │   ├── manage.py               # Django management script
+    │   └── ...
+    ├── tasknode-frontend/           # React frontend folder
+    │   ├── public/
+    │   ├── src/
+    │   └── ...
+    ├── .gitignore                   # Ignored files
+    ├── README.md                    # Project documentation
+    └── ...
 
 
 🛡️ Security and Best Practices
