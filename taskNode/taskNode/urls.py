@@ -11,5 +11,7 @@ urlpatterns = [
     path('api/auth/', include('djoser.urls')),
     path('api/auth/', include('djoser.urls.jwt')),
     path('api/auth/social/', include('allauth.socialaccount.urls')),
+    path('api/v1/tasks', include('taskNodeTasks.urls')),
+    
 ]
 
