@@ -10,7 +10,7 @@ class Category(models.Model):
     description = models.TextField(max_length=2000)
     created_by = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='related_user')
     created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField()
+    updated_at = models.DateTimeField(auto_now=True)
 
 
 PRIORITIES = [
