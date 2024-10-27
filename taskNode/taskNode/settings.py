@@ -79,7 +79,7 @@ DATABASES = {
 
 
 
-
+AUTH_USER_MODEL = 'taskNodeUser.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -106,18 +106,22 @@ REST_FRAMEWORK = {
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
+    'user_create': ['rest_framework.permissions.AllowAny'],
+    'user_delete': ['djoser.permissions.CurrentUserOrAdmin'],
+    'USER': 'taskNodeUser.CustomUser',
     'USER_CREATE_PASSWORD_RETYPE': True,
     'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
     'SEND_CONFIRMATION_EMAIL': True,
+    'SET_USERNAME_RETYPE': True,
+    'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
-    'ACTIVATION_URL': 'activate/{uid}/{token}',
-    'SEND_ACTIVATION_EMAIL': True,
+    'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
     'SERIALIZERS': {
-        'user_create' : 'taskNodeUser.serializers.CustomUserCreateSerializer',
+        'user_create': 'taskNodeUser.serializers.CustomUserSerializer',
+        'user': 'taskNodeUser.serializers.CustomUserSerializer',
     },
 }
-
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=5),
@@ -146,4 +150,3 @@ STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'taskNodeUser.CustomUser'
