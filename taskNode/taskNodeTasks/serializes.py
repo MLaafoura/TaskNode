@@ -8,7 +8,7 @@ class UserTaskSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserTask
-        fields = ['user', 'role']
+        fields = '__all__'
 
 
 class TaskSerializer(serializers.ModelSerializer):
