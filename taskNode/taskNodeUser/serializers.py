@@ -1,9 +1,12 @@
 from djoser.serializers import UserCreateSerializer
-from django.contrib.auth import get_user_model
+from .models import CustomUser
 
-User = get_user_model()
 
-class CustomUserCreateSerializer(UserCreateSerializer):
+class CustomUserSerializer(UserCreateSerializer):
     class Meta(UserCreateSerializer.Meta):
-        model = User
-        fields = ('id', 'email', 'username', 'password')
+        model = CustomUser
+        fields = ('id', 'email', 'username', 'first_name', 'last_name', 'password', 'role')
+
+
+    def create(self, validated_data):
+        return super().perform_create(validated_data) 
